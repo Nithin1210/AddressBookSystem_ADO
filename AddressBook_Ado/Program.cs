@@ -1,5 +1,4 @@
 ﻿using AddressBook_Ado;
-using Azure;
 
 internal class Program
 {
@@ -8,7 +7,12 @@ internal class Program
         Console.WriteLine("! Address_Book !");
 
         AddressBookOperations operation = new AddressBookOperations();
-        operation.CreateDatabase();
+        // operation.CreateDatabase();
+        operation.CreateTable();  
+
+       
+
+
 
     }
 }
