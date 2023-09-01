@@ -60,7 +60,59 @@ namespace AddressBook_Ado
                 con.Close();
             }
         }
+       
+
         public bool AddEmployee(AddressModel obj)
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("AddContactDetails", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@FirstName", obj.FirstName);
+                com.Parameters.AddWithValue("@LastName", obj.LastName);
+                com.Parameters.AddWithValue("@Address", obj.Address);
+                com.Parameters.AddWithValue("@City", obj.City);
+                com.Parameters.AddWithValue("@State", obj.State);
+                com.Parameters.AddWithValue("@Zip", obj.Zip);
+                com.Parameters.AddWithValue("@PhoneNumber", obj.PhoneNumber);
+                com.Parameters.AddWithValue("@Email", obj.Email);
+                con.Open();
+                int i = com.ExecuteNonQuery(); 
+                con.Close();
+                Console.WriteLine(" Done !!");
+                if (i != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+                Console.WriteLine("Error !! , Retry Data in SQL");
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+        public void Result(bool data)
+        {
+            if (data)
+            {
+                Console.WriteLine("Code ok, You can Continue !!");
+                return;
+            }
+            Console.WriteLine("!!Oops ,Something went wrong");
+        }
+
+        public bool InsertData(AddressModel obj)
         {
             try
             {
@@ -98,15 +150,46 @@ namespace AddressBook_Ado
             }
 
         }
-        public void Result(bool data)
+        public bool EditData(AddressModel obj)
         {
-            if (data)
+            try
             {
-                Console.WriteLine("Code ok !");
-                return;
+                connection();
+                SqlCommand com = new SqlCommand("EditContactDetails", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@FirstName", obj.FirstName);
+                com.Parameters.AddWithValue("@LastName", obj.LastName);
+                com.Parameters.AddWithValue("@Address", obj.Address);
+                com.Parameters.AddWithValue("@City", obj.City);
+                com.Parameters.AddWithValue("@State", obj.State);
+                com.Parameters.AddWithValue("@Zip", obj.Zip);
+                com.Parameters.AddWithValue("@PhoneNumber", obj.PhoneNumber);
+                com.Parameters.AddWithValue("@Email", obj.Email);
+                con.Open();
+                int i = com.ExecuteNonQuery(); 
+                con.Close();
+                if (i != 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
             }
-            Console.WriteLine("!!Oops ,Something went wrong");
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
+
+
 
     }
 
