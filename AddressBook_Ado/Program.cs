@@ -1,4 +1,5 @@
 ﻿using AddressBook_Ado;
+using System.Data;
 
 internal class Program
 {
@@ -37,8 +38,14 @@ internal class Program
             Email = "b@gmail.com",
 
         };
-        //operation.Result(operation.InsertData(edit));
-        operation.Result(operation.EditData(edit));
+        //operation.Result(operation.InsertData(dataset));
+        //operation.Result(operation.EditData(edit));
+
+        AddressModel delete = new AddressModel()
+        {
+            FirstName = "Yoman",
+        };
+        operation.Result(operation.DeleteData(dataset));
 
 
 
