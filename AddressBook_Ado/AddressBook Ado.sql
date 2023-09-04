@@ -94,6 +94,16 @@ exec SizeByState;
 
 select * from AddressBook;
 
+--UC8
+CREATE PROCEDURE GetPeopleInCitySortedByName
+@city NVARCHAR(255)
+AS 
+BEGIN
+SELECT *FROM AddressBook WHERE city = @city ORDER BY firstName;
+END;
+
+
+
 
 
 

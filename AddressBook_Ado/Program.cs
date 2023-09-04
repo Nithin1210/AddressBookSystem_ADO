@@ -54,8 +54,10 @@ internal class Program
         //operation.GetAllEmployeeDetailsByState(statesearch);
         //operation.DisplayAllDataByState(statesearch);
 
-        operation.SizeByCity();
-        operation.SizeByState();
+        //operation.SizeByCity();
+        //operation.SizeByState();
+
+        operation.GetPeopleInCitySortedByName(citysearch);
 
 
 
