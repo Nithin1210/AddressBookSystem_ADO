@@ -103,6 +103,21 @@ SELECT *FROM AddressBook WHERE city = @city ORDER BY firstName;
 END;
 
 
+--UC9
+Create table Type(
+id int primary key identity(1,1),
+type varchar(20)
+);
+
+Insert into Type values('Tollywood');
+Insert into Type values('Bollywood');
+Insert into Type values('Hollywood');
+Insert into Type values('kollywood');
+
+select * from Type
+select * from AddressBook;
+
+
 
 
 

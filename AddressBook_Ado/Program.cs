@@ -57,7 +57,7 @@ internal class Program
         //operation.SizeByCity();
         //operation.SizeByState();
 
-        operation.GetPeopleInCitySortedByName(citysearch);
+        operation.GetPeopleInCitySortedByName(citysearch);  
 
 
 
