@@ -59,6 +59,9 @@ internal class Program
 
         operation.GetPeopleInCitySortedByName(citysearch);  
 
+        // UC-9 Done in DataBase In mssql ...
+
+
 
 
     }
