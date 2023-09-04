@@ -53,4 +53,35 @@ End
 
 select * from AddressBook;
 
+--UC5
+Create Procedure DeleteContactDetails(
+@firstName varchar(20)
+)
+As
+Begin Delete from AddressBook where firstName=@firstName
+End
+
+select * from AddressBook;
+
+--UC6
+Create Procedure DetailsinCity(
+@city varchar(20)
+)
+As
+Begin Select * from AddressBook where city=@city
+End
+----------------------------------
+create Procedure DetailsinState(
+@state varchar(20)
+)
+As
+Begin Select * from AddressBook where state=@state
+End
+
+select * from AddressBook;
+
+
+
+
+
 

@@ -219,9 +219,129 @@ namespace AddressBook_Ado
             }
 
         }
+        public List<AddressModel> GetAllEmployeeDetailsByCity(string City)
+        {
+            connection();
+            List<AddressModel> emplist = new List<AddressModel>();
+            SqlCommand com = new SqlCommand("DetailsinCity", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@city", City);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            con.Open();
+            da.Fill(dt);
+            con.Close();
+            foreach (DataRow dr in dt.Rows)
+            {
+                emplist.Add(
+                    new AddressModel
+                    {
+                        Id = Convert.ToInt32(dr["id"]),
+                        FirstName = Convert.ToString(dr["firstname"]),
+                        LastName = Convert.ToString(dr["lastname"]),
+                        Address = Convert.ToString(dr["address"]),
+                        City = Convert.ToString(dr["city"]),
+                        State = Convert.ToString(dr["state"]),
+                        Zip = Convert.ToInt64(dr["zip"]),
+                        PhoneNumber = Convert.ToString(dr["phone"]),
+                        Email = Convert.ToString(dr["email"]),
 
+                    }
+                    );
+            }
+            return emplist;
 
+        }
+        public List<AddressModel> GetAllEmployeeDetailsByState(string statesearch)
+        {
+            connection();
+            List<AddressModel> emplist = new List<AddressModel>();
+            SqlCommand com = new SqlCommand("DetailsinState", con);
+            com.CommandType = CommandType.StoredProcedure;
+            com.Parameters.AddWithValue("@State", statesearch);
+            SqlDataAdapter da = new SqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            con.Open();
+            da.Fill(dt);
+            con.Close();
+            foreach (DataRow dr in dt.Rows)
+            {
+                emplist.Add(
+                    new AddressModel
+                    {
+                        Id = Convert.ToInt32(dr["id"]),
+                        FirstName = Convert.ToString(dr["firstname"]),
+                        LastName = Convert.ToString(dr["lastname"]),
+                        Address = Convert.ToString(dr["address"]),
+                        City = Convert.ToString(dr["city"]),
+                        State = Convert.ToString(dr["state"]),
+                        Zip = Convert.ToInt64(dr["zip"]),
+                        PhoneNumber = Convert.ToString(dr["phone"]),
+                        Email = Convert.ToString(dr["email"]),
 
+                    }
+                    );
+            }
+            return emplist;
+
+        }
+        public void DisplayAllDataByCity(string search)
+        {
+            try
+            {
+
+                List<AddressModel> employees = GetAllEmployeeDetailsByCity(search);
+
+                foreach (AddressModel data in employees)
+                {
+                    Console.WriteLine($"Id: {data.Id}");
+                    Console.WriteLine($"firstname: {data.FirstName}");
+                    Console.WriteLine($"lastname: {data.LastName}");
+                    Console.WriteLine($"Address: {data.Address}");
+                    Console.WriteLine($"city: {data.City}");
+                    Console.WriteLine($"state: {data.State}");
+                    Console.WriteLine($"zip: {data.Zip}");
+                    Console.WriteLine($"phone: {data.PhoneNumber}");
+                    Console.WriteLine($"email: {data.Email}");
+                    Console.WriteLine("\n.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
+        public void DisplayAllDataByState(string search)
+        {
+            try
+            {
+
+                List<AddressModel> employees = GetAllEmployeeDetailsByState(search);
+
+                foreach (AddressModel data in employees)
+                {
+                    Console.WriteLine($"Id: {data.Id}");
+                    Console.WriteLine($"firstname: {data.FirstName}");
+                    Console.WriteLine($"lastname: {data.LastName}");
+                    Console.WriteLine($"Address: {data.Address}");
+                    Console.WriteLine($"city: {data.City}");
+                    Console.WriteLine($"state: {data.State}");
+                    Console.WriteLine($"zip: {data.Zip}");
+                    Console.WriteLine($"phone: {data.PhoneNumber}");
+                    Console.WriteLine($"email: {data.Email}");
+                    Console.WriteLine("\n.");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+        }
     }
 
+
+
 }
+
+

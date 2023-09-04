@@ -41,11 +41,18 @@ internal class Program
         //operation.Result(operation.InsertData(dataset));
         //operation.Result(operation.EditData(edit));
 
-        AddressModel delete = new AddressModel()
-        {
-            FirstName = "Yoman",
-        };
-        operation.Result(operation.DeleteData(dataset));
+        //AddressModel delete = new AddressModel()
+        //{
+        //    FirstName = "Yoman",
+        //};
+        //operation.Result(operation.DeleteData(dataset));
+
+        string citysearch = "bcd";
+        string statesearch = "abcd";
+        //operation.GetAllEmployeeDetailsByCity(citysearch);
+        //operation.DisplayAllDataByCity(citysearch);
+        operation.GetAllEmployeeDetailsByState(statesearch);
+        operation.DisplayAllDataByState(statesearch);
 
 
 
