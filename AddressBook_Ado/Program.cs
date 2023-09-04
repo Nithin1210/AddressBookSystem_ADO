@@ -57,9 +57,12 @@ internal class Program
         //operation.SizeByCity();
         //operation.SizeByState();
 
-        operation.GetPeopleInCitySortedByName(citysearch);  
+        //operation.GetPeopleInCitySortedByName(citysearch);
 
         // UC-9 Done in DataBase In mssql ...
+
+        operation.CountByType();
+
 
 
 

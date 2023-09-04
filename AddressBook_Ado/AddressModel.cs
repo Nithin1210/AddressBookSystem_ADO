@@ -14,6 +14,7 @@
         public int count { get; set; }
         public int Count { get; set; }
         public string Type { get; set; }
+        public string Relation { get; set; }
 
     }
 }

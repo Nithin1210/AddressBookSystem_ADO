@@ -118,6 +118,14 @@ select * from Type
 select * from AddressBook;
 
 
+--UC10
+Create Procedure CountByType
+As
+Begin
+Select Relation, count(Relation) as count from AddressBook group by Relation;
+End
+
+exec CountByType;
 
 
 
