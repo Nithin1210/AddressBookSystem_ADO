@@ -51,8 +51,11 @@ internal class Program
         string statesearch = "abcd";
         //operation.GetAllEmployeeDetailsByCity(citysearch);
         //operation.DisplayAllDataByCity(citysearch);
-        operation.GetAllEmployeeDetailsByState(statesearch);
-        operation.DisplayAllDataByState(statesearch);
+        //operation.GetAllEmployeeDetailsByState(statesearch);
+        //operation.DisplayAllDataByState(statesearch);
+
+        operation.SizeByCity();
+        operation.SizeByState();
 
 
 

@@ -338,10 +338,89 @@ namespace AddressBook_Ado
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
         }
+        public void SizeByCity()
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("SizeByCity", con);
+                com.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                List<AddressModel> addressBook = new List<AddressModel>();
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    addressBook.Add(
+                        new AddressModel
+                        {
+                            City = Convert.ToString(dr["city"]),
+                            Count = Convert.ToInt32(dr["count"])
+                        });
+                }
+                Console.WriteLine("No.of persons in each city are ");
+                foreach (var data in addressBook)
+                {
+                    Console.WriteLine(data.City + "=" + data.Count);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public void SizeByState()
+        {
+            try
+            {
+                connection();
+                SqlCommand com = new SqlCommand("SizeByState", con);
+                com.CommandType = CommandType.StoredProcedure;
+                con.Open();
+                int i = com.ExecuteNonQuery();
+                List<AddressModel> addressBook = new List<AddressModel>();
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    addressBook.Add(
+                        new AddressModel
+                        {
+                            State = Convert.ToString(dr["state"]),
+                            Count = Convert.ToInt32(dr["count"])
+                        });
+                }
+                Console.WriteLine("No.of persons in each state are ");
+                foreach (var data in addressBook)
+                {
+                    Console.WriteLine(data.State + "=" + data.Count);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
-
-
-
 }
+
+
+
+
+
+
 
 

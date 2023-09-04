@@ -80,6 +80,20 @@ End
 
 select * from AddressBook;
 
+--UC7
+Create Procedure SizeByCity
+As
+Begin Select city, count(*) as count from AddressBook group by city
+End
+
+Create Procedure SizeByState
+As
+Begin Select state, count(*) as count from AddressBook group by state
+End
+exec SizeByState;
+
+select * from AddressBook;
+
 
 
 
