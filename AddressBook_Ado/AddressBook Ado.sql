@@ -27,7 +27,7 @@ create Procedure AddContactDetails
 @state varchar(20),
 @zip bigint,
 @phonenumber varchar(10), 
-@email varchar(30) 
+@email varchar(30)
 )
 As
 begin insert Into AddressBook values(@firstName,@lastName,@address,@city,@state,@zip,@phonenumber,@email)
@@ -52,6 +52,7 @@ update AddressBook set firstName=@firstName,lastName=@lastName,address=@address,
 End
 
 select * from AddressBook;
+
 
 --UC5
 Create Procedure DeleteContactDetails(
@@ -124,11 +125,22 @@ As
 Begin
 Select Relation, count(Relation) as count from AddressBook group by Relation;
 End
-
 exec CountByType;
+ALTER TABLE AddressBook ADD relation VARCHAR(255);
+select * from AddressBook 
+
+--UC11
+Create Procedure AddValues(
+@Contactid int,
+@Typeid int
+)
+As
+Begin
+Insert into AddressBook values(@Contactid,@Typeid)
+End
 
 
-
+Select * from AddressBook set 
 
 
 

@@ -478,7 +478,7 @@ namespace AddressBook_Ado
                     addressBook.Add(
                         new AddressModel
                         {
-                            Relation = Convert.ToString(dr["Relation"]),
+                            Relation = Convert.ToString(dr["relation"]),
                             Count = Convert.ToInt32(dr["count"])
                         });
                 }
@@ -497,7 +497,44 @@ namespace AddressBook_Ado
                 con.Close();
             }
         }
+        public void PersonAsTwoRelation(string firstName, string newRelation)
+        {
+            try
+            {
+                connection();
+                List<AddressModel> emplist = new List<AddressModel>();
+                SqlCommand com = new SqlCommand("CopyDataWithDifferentRelation", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@FirstName", firstName);
+                com.Parameters.AddWithValue("@NewRelation", newRelation);
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataTable dt = new DataTable();
+                con.Open();
+                da.Fill(dt);
+                con.Close();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    emplist.Add(
+                        new AddressModel
+                        {
 
+                            FirstName = Convert.ToString(dr["firstname"]),
+
+                            Relation = Convert.ToString(dr["Relation"])
+                        });
+                }
+                Console.WriteLine("The " + firstName + " in the added as " + newRelation + ".");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
     }
 }

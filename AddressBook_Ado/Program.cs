@@ -61,11 +61,15 @@ internal class Program
 
         // UC-9 Done in DataBase In mssql ...
 
-        operation.CountByType();
+        //operation.CountByType();
+
+        
+        operation.PersonAsTwoRelation("SadMan", "Hollywood");
 
 
 
 
+        
 
     }
 }
