@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "ba3eeb1b-e958-4f73-8337-58c26c5a460e",
+		"name": "AddressBook_JsonServer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29485983"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/AddressBookJson",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/AddressBookJson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"AddressBookJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/AddressBookJson",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6666,\r\n    \"FirstName\": \"f\",\r\n    \"LastName\": \"f\",\r\n    \"Address\": \"f\",\r\n    \"City\": \"f\",\r\n    \"State\": \"f\",\r\n    \"Zip\": 12346,\r\n    \"PhoneNumber\": \"1234567890\",\r\n    \"Email\": \"f@gmail.com\",\r\n    \"Count\": 0,\r\n    \"Relation\": \"Others\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/AddressBookJson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"AddressBookJson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/AddressBookJson/66",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 66,\r\n    \"FirstName\": \"f.f\",\r\n    \"LastName\": \"f.f\",\r\n    \"Address\": \"f.f\",\r\n    \"City\": \"f.f\",\r\n    \"State\": \"f.f\",\r\n    \"Zip\": 12346,\r\n    \"PhoneNumber\": \"1234567890\",\r\n    \"Email\": \"ff.ff@gmail.com\",\r\n    \"Count\": 0,\r\n    \"Relation\": \"Others\"\r\n  \r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/AddressBookJson/66",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"AddressBookJson",
+						"66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/AddressBookJson/666",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/AddressBookJson/666",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"AddressBookJson",
+						"666"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

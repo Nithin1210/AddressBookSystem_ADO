@@ -47,8 +47,8 @@ internal class Program
         //};
         //operation.Result(operation.DeleteData(dataset));
 
-        string citysearch = "bcd";
-        string statesearch = "abcd";
+        //string citysearch = "bcd";
+        //string statesearch = "abcd";
         //operation.GetAllEmployeeDetailsByCity(citysearch);
         //operation.DisplayAllDataByCity(citysearch);
         //operation.GetAllEmployeeDetailsByState(statesearch);
