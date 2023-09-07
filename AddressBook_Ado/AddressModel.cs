@@ -11,7 +11,6 @@
         public long Zip { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-       
         public int count { get; set; }
         public int Count { get; set; }
         public string Type { get; set; }

@@ -30,7 +30,7 @@ create Procedure AddContactDetails
 @email varchar(30)
 )
 As
-begin insert Into AddressBook values(@firstName,@lastName,@address,@city,@state,@zip,@phonenumber,@email)
+begin insert Into AddressBook values (@firstName ,@lastName,@address,@city,@state,@zip,@phonenumber,@email)
 End
 
 select * from AddressBook;
@@ -110,10 +110,10 @@ id int primary key identity(1,1),
 type varchar(20)
 );
 
-Insert into Type values('Tollywood');
-Insert into Type values('Bollywood');
-Insert into Type values('Hollywood');
-Insert into Type values('kollywood');
+Insert into Type values('Family');
+Insert into Type values('Friends');
+Insert into Type values('Profession');
+Insert into Type values('Others');
 
 select * from Type
 select * from AddressBook;
@@ -140,7 +140,6 @@ Insert into AddressBook values(@Contactid,@Typeid)
 End
 
 
-Select * from AddressBook set 
 
 
 

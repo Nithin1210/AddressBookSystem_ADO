@@ -63,13 +63,74 @@ internal class Program
 
         //operation.CountByType();
 
-        
-        operation.PersonAsTwoRelation("SadMan", "Hollywood");
+        //operation.PersonAsTwoRelation("SadMan", "Others");
+
+
+        List<AddressModel> list = new List<AddressModel>();
+        list.Add(new AddressModel()
+        {
+            FirstName = "a",
+            LastName = "a",
+            Address = "a",
+            City = "a",
+            State = "a",
+            Zip = 12345,
+            PhoneNumber = "1234567890",
+            Email = "a@gmail.com",
+            Relation = "Others"
+        });
+        list.Add(new AddressModel()
+        {
+            FirstName = "b",
+            LastName = "b",
+            Address = "b",
+            City = "b",
+            State = "b",
+            Zip = 12342,
+            PhoneNumber = "1234567890",
+            Email = "b@gmail.com",
+            Relation = "Others"
+        }); list.Add(new AddressModel()
+        {
+            FirstName = "c",
+            LastName = "c",
+            Address = "c",
+            City = "c",
+            State = "c",
+            Zip = 12343,
+            PhoneNumber = "1234567890",
+            Email = "c@gmail.com",
+            Relation = "Others"
+        }); list.Add(new AddressModel()
+        {
+            FirstName = "d",
+            LastName = "d",
+            Address = "d",
+            City = "d",
+            State = "d",
+            Zip = 12344,
+            PhoneNumber = "1234567890",
+            Email = "d@gmail.com",
+            Relation = "Others"
+        }); list.Add(new AddressModel()
+        {
+            FirstName = "e",
+            LastName = "e",
+            Address = "e",
+            City = "e",
+            State = "e",
+            Zip = 12345,
+            PhoneNumber = "1234567890",
+            Email = "e@gmail.com",
+            Relation = "Others"
+        });
+
+        WithAndWithOutThread thread = new WithAndWithOutThread();
+        thread.UsingWithThread(list);
+        thread.UsingWithThread(list);
 
 
 
-
-        
 
     }
 }
